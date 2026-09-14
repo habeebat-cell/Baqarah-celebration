@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="A little celebration for completing the memorisation of Surah Al-Baqarah."
+    >
+
+    <title>Al-Baqarah | A Little Celebration</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Roboto:wght@400;500&family=Amiri:wght@400;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Our CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         OPENING SCREEN
+    ========================== -->
+
+    <section class="opening-screen" id="openingScreen">
+
+        <div class="stars"></div>
+
+        <div class="opening-content">
+
+            <p class="arabic-small">
+                بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+            </p>
+
+            <p class="eyebrow">
+                A little celebration awaits...
+            </p>
+
+            <h1>
+                Something beautiful<br>
+                happened.
+            </h1>
+
+            <p class="opening-description">
+                Take a moment.
+                Then open it.
+            </p>
+
+            <button class="open-button" id="openButton">
+                Tap to open
+                <span>✦</span>
+            </button>
+
+            <p class="signature">
+                for Habeebat
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MAIN WEBSITE
+    ========================== -->
+
+    <main id="mainContent" class="hidden">
+
+        <!-- BALLOON / CONFETTI CONTAINER -->
+
+        <div id="celebrationContainer"></div>
+
+
+        <!-- =========================
+             HERO / CONGRATULATIONS
+        ========================== -->
+
+        <section class="celebration-section">
+
+            <div class="celebration-content">
+
+                <p class="arabic-title">
+                    مَا شَاءَ اللَّهُ
+                </p>
+
+                <p class="small-label">
+                    ALHAMDULILLĀH
+                </p>
+
+                <h2>
+                    You did it, Habeebat.
+                </h2>
+
+                <p class="big-message">
+                    You memorized<br>
+                    <span>Sūrat Al-Baqarah.</span>
+                </p>
+
+                <p class="celebration-text">
+                    286 āyāt.<br>
+                    One page at a time.<br>
+                    One repetition at a time.<br>
+                    One day at a time.
+                </p>
+
+                <div class="scroll-hint">
+                    <span>↓</span>
+                    Keep going
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ACHIEVEMENT
+        ========================== -->
+
+        <section class="achievement-section">
+
+            <div class="section-container">
+
+                <p class="section-label">
+                    THE MILESTONE
+                </p>
+
+                <h2 class="section-title">
+                    A whole Sūrah<br>
+                    now lives in your heart.
+                </h2>
+
+                <div class="achievement-card">
+
+                    <p class="card-label">
+                        SŪRAT AL-BAQARAH
+                    </p>
+
+                    <div class="number" id="ayahCounter">
+                        0
+                    </div>
+
+                    <p class="number-label">
+                        ĀYĀT MEMORIZED
+                    </p>
+
+                    <div class="divider"></div>
+
+                    <p class="card-arabic">
+                        البقرة
+                    </p>
+
+                    <p class="card-note">
+                        2nd Sūrah of the Qur'an
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             REFLECTION
+        ========================== -->
+
+        <section class="reflection-section">
+
+            <div class="section-container narrow">
+
+                <p class="section-label">
+                    THE JOURNEY
+                </p>
+
+                <h2 class="section-title">
+                    Proof that you can actually<br>
+                    do anything you put your mind to.
+                </h2>
+
+                <div class="reflection-card">
+
+                    <p>
+                        You said you'd do it, and you did.
+                    </p>
+
+                    <p>
+                        Keep making promises to yourself, and keep
+                        keeping them, watch how disciplined and
+                        grown you'll become.
+                    </p>
+
+                    <p class="emphasis">
+                        I'm so proud of you 😍😍
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             FINAL SURPRISE
+        ========================== -->
+
+        <section class="final-section">
+
+            <div class="final-content">
+
+                <p class="arabic-small">
+                    وَالْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ
+                </p>
+
+                <h2>
+                    One last thing...
+                </h2>
+
+                <p>
+                    There is one more little celebration
+                    waiting for you.
+                </p>
+
+                <button
+                    class="final-button"
+                    id="finalButton"
+                >
+                    <span>✦</span>
+                    One more time
+                    <span>✦</span>
+                </button>
+
+                <div
+                    class="final-message hidden"
+                    id="finalMessage"
+                >
+
+                    <div class="dua-card">
+
+                        <p class="dua-arabic">
+                            اللَّهُمَّ اجْعَلِ الْقُرْآنَ رَبِيعَ قَلْبِي
+                        </p>
+
+                        <p class="dua-translation">
+                            O Allah, make the Qur'an
+                            the spring of my heart.
+                        </p>
+
+                    </div>
+
+                    <p class="dua-note">
+                        May Allah make what you have memorized
+                        firm in your heart, increase you in the Qur'an,
+                        and make it a source of guidance and light
+                        throughout your life.
+                    </p>
+
+                    <p class="final-arabic">
+                        الْحَمْدُ لِلَّهِ
+                    </p>
+
+                    <h3>
+                        May Allah preserve it.
+                    </h3>
+
+                    <p>
+                        May Allah make the Qur'an firm
+                        in your heart, easy upon your tongue,
+                        and a companion for you in this life
+                        and the next.
+                    </p>
+
+                    <p class="ameen">
+                        Āmīn.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Our JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>

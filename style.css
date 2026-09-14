@@ -1,0 +1,478 @@
+/* =========================================
+   BASIC RESET
+========================================= */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: "Roboto", sans-serif;
+    background: var(--blush-50);
+    color: var(--rose-900);
+    overflow-x: hidden;
+}
+
+button { font-family: inherit; }
+
+
+/* =========================================
+   COLOUR VARIABLES
+========================================= */
+
+:root {
+    --blush-50: #FDE9EF;
+    --blush-100: #F2B8C6;
+    --rose-400: #E88CA4;
+    --rose-600: #C23D6B;
+    --rose-900: #8A1F4B;
+    --white: #FFFFFF;
+}
+
+
+/* =========================================
+   GENERAL
+========================================= */
+
+.hidden { display: none !important; }
+
+.section-container {
+    width: min(1100px, 90%);
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section-container.narrow { max-width: 760px; }
+
+.section-label {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    font-weight: 600;
+    color: var(--rose-600);
+    margin-bottom: 1.5rem;
+}
+
+.section-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    line-height: 1.1;
+    font-weight: 700;
+}
+
+
+/* =========================================
+   OPENING SCREEN
+========================================= */
+
+.opening-screen {
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(circle at 50% 40%, rgba(232, 140, 164, 0.18), transparent 35%), var(--blush-50);
+}
+
+.opening-content {
+    position: relative;
+    z-index: 2;
+    width: min(700px, 90%);
+    text-align: center;
+    animation: fadeUp 1.3s ease forwards;
+}
+
+.arabic-small {
+    font-family: "Amiri", serif;
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+    color: var(--rose-600);
+}
+
+.eyebrow {
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    font-size: 0.7rem;
+    color: var(--rose-600);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.opening-content h1 {
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(2.6rem, 7vw, 4.8rem);
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.opening-description {
+    margin-top: 2rem;
+    color: var(--rose-600);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.open-button, .final-button {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: 1px solid var(--rose-400);
+    background: transparent;
+    color: var(--rose-900);
+    padding: 1rem 1.7rem;
+    margin-top: 2.5rem;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.open-button span, .final-button span { color: var(--rose-600); margin-left: 0.5rem; }
+
+.signature {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--rose-400);
+    margin-top: 1.5rem;
+}
+
+.open-button:hover, .final-button:hover {
+    background: var(--rose-900);
+    color: var(--white);
+    transform: translateY(-3px);
+}
+
+
+/* =========================================
+   STARS
+========================================= */
+
+.stars::before, .stars::after {
+    content: "✦  ·  ✧  ·  ✦  ·  ·  ✧";
+    position: absolute;
+    color: rgba(194, 61, 107, 0.35);
+    font-size: 1rem;
+    letter-spacing: 3rem;
+    animation: floatStars 8s ease-in-out infinite;
+}
+
+.stars::before { top: 15%; left: 10%; }
+.stars::after { bottom: 15%; right: 5%; animation-delay: 2s; }
+
+
+/* =========================================
+   CELEBRATION HERO
+========================================= */
+
+.celebration-section {
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(circle at 50% 40%, rgba(232, 140, 164, 0.22), transparent 40%), var(--blush-50);
+}
+
+.celebration-content { position: relative; z-index: 5; animation: fadeUp 1s ease forwards; }
+
+.arabic-title {
+    font-family: "Amiri", serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 1rem;
+    color: var(--rose-900);
+}
+
+.small-label {
+    font-family: "Montserrat", sans-serif;
+    color: var(--rose-600);
+    letter-spacing: 0.3em;
+    font-size: 0.65rem;
+    font-weight: 600;
+}
+
+.celebration-content h2 {
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    font-weight: 800;
+    line-height: 1;
+    margin: 1rem 0 2rem;
+}
+
+.big-message {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: clamp(1.6rem, 4vw, 2.6rem);
+    line-height: 1.2;
+}
+
+.big-message span { color: var(--rose-600); }
+
+.celebration-text { margin-top: 2rem; line-height: 2; color: var(--rose-600); }
+
+.scroll-hint {
+    font-family: "Montserrat", sans-serif;
+    margin-top: 4rem;
+    color: var(--rose-600);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+}
+
+.scroll-hint span { display: block; font-size: 1.5rem; margin-bottom: 0.3rem; animation: bounce 2s infinite; }
+
+
+/* =========================================
+   ACHIEVEMENT SECTION
+========================================= */
+
+.achievement-section { padding: 10rem 0; background: var(--blush-100); }
+
+.achievement-card {
+    max-width: 600px;
+    margin: 4rem auto 0;
+    padding: 4rem 2rem;
+    background: var(--white);
+    border: 1px solid rgba(194, 61, 107, 0.3);
+    box-shadow: 0 30px 80px rgba(138, 31, 75, 0.1);
+}
+
+.card-label { font-family: "Montserrat", sans-serif; font-size: 0.7rem; letter-spacing: 0.3em; color: var(--rose-600); }
+
+.number {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    font-size: clamp(5.5rem, 16vw, 9rem);
+    line-height: 1;
+    margin: 2rem 0 1rem;
+    color: var(--rose-900);
+}
+
+.number-label { font-family: "Montserrat", sans-serif; letter-spacing: 0.2em; font-size: 0.7rem; color: var(--rose-600); }
+
+.divider { width: 50px; height: 1px; background: var(--rose-400); margin: 2.5rem auto; }
+
+.card-arabic { font-family: "Amiri", serif; font-size: 2.5rem; color: var(--rose-900); }
+
+.card-note { color: var(--rose-600); font-size: 0.8rem; margin-top: 0.5rem; }
+
+
+/* =========================================
+   REFLECTION
+========================================= */
+
+.reflection-section { padding: 10rem 0; background: var(--blush-50); }
+
+.reflection-card {
+    max-width: 640px;
+    margin: 4rem auto 0;
+    padding: 3.5rem 2rem;
+    background: var(--white);
+    border: 1px solid rgba(194, 61, 107, 0.3);
+    box-shadow: 0 30px 80px rgba(138, 31, 75, 0.1);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+    line-height: 1.6;
+    color: var(--rose-900);
+}
+
+.reflection-card p { margin-bottom: 1.5rem; }
+.reflection-card p:last-child { margin-bottom: 0; }
+.reflection-card .emphasis { color: var(--rose-600); font-weight: 700; font-size: 1.15em; }
+
+
+/* =========================================
+   DU'A
+========================================= */
+
+.dua-card {
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+    padding: 3rem 1.5rem;
+    background: var(--white);
+    border: 1px solid rgba(232, 140, 164, 0.4);
+    box-shadow: 0 20px 60px rgba(138, 31, 75, 0.08);
+}
+
+.dua-arabic {
+    font-family: "Amiri", serif;
+    font-size: clamp(1.5rem, 6vw, 3rem);
+    line-height: 1.7;
+    direction: rtl;
+    word-spacing: 0.15em;
+    color: var(--rose-900);
+    margin-bottom: 1rem;
+}
+
+.dua-translation {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 1.3rem;
+    color: var(--rose-600);
+}
+
+.dua-note { max-width: 600px; margin: 0 auto 2.5rem; color: var(--rose-600); line-height: 1.9; }
+
+
+/* =========================================
+   FINAL SECTION
+========================================= */
+
+.final-section {
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5rem 1.5rem;
+    background: var(--blush-50);
+}
+
+.final-content { max-width: 700px; }
+
+.final-content h2 {
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    font-weight: 800;
+    margin: 1rem 0;
+}
+
+.final-content > p:not(.arabic-small) { color: var(--rose-600); line-height: 1.8; }
+
+.final-message { margin-top: 4rem; animation: fadeUp 1s ease forwards; }
+
+.final-arabic { font-family: "Amiri", serif; font-size: 3rem; color: var(--rose-900); }
+
+.final-message h3 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 1rem 0;
+}
+
+.final-message > p:not(.final-arabic):not(.ameen) { line-height: 1.8; color: var(--rose-600); }
+
+.ameen { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 1.6rem; color: var(--rose-600); margin-top: 2rem; }
+
+
+/* =========================================
+   BALLOONS
+========================================= */
+
+.balloon {
+    position: fixed;
+    bottom: -180px;
+    width: 72px;
+    height: 92px;
+    border-radius: 50% 50% 45% 45%;
+    z-index: 20;
+    animation: balloonRise linear forwards;
+    pointer-events: none;
+}
+
+.balloon::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 100px;
+    background: rgba(138, 31, 75, 0.35);
+    left: 50%;
+    top: 95%;
+    transform: rotate(3deg);
+}
+
+.balloon::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 8px solid currentColor;
+    left: 50%;
+    bottom: -6px;
+    transform: translateX(-50%);
+}
+
+
+/* =========================================
+   CONFETTI
+========================================= */
+
+.confetti {
+    position: fixed;
+    width: 8px;
+    height: 14px;
+    top: -30px;
+    z-index: 30;
+    pointer-events: none;
+    animation: confettiFall linear forwards;
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatStars {
+    0%, 100% { transform: translateY(0); opacity: 0.4; }
+    50% { transform: translateY(-15px); opacity: 1; }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(8px); }
+}
+
+@keyframes balloonRise {
+    0% { transform: translateY(0) rotate(-5deg); opacity: 0; }
+    8% { opacity: 1; }
+    55% { transform: translateY(-65vh) rotate(8deg); }
+    88% { opacity: 1; }
+    100% { transform: translateY(-135vh) rotate(-8deg); opacity: 0; }
+}
+
+@keyframes confettiFall {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+    .opening-content h1 { font-size: clamp(2.4rem, 12vw, 3.4rem); }
+    .celebration-content h2 { font-size: clamp(2.6rem, 14vw, 4rem); }
+    .achievement-section, .reflection-section { padding: 5rem 0; }
+    .achievement-card { padding: 2.5rem 1.25rem; }
+    .number { font-size: 5.5rem; }
+    .balloon { width: 54px; height: 70px; }
+    .dua-card { padding: 2.5rem 1.25rem; }
+    .final-section { padding: 3.5rem 1.25rem; }
+    .open-button, .final-button { padding: 0.9rem 1.4rem; font-size: 0.85rem; }
+}
+
+@media (max-width: 380px) {
+    .opening-content h1 { font-size: clamp(2rem, 13vw, 2.8rem); }
+    .celebration-content h2 { font-size: clamp(2.2rem, 15vw, 3.2rem); }
+    .arabic-title, .arabic-small { font-size: 1.6rem; }
+    .achievement-section, .reflection-section { padding: 4rem 0; }
+    .number { font-size: 4.2rem; }
+    .reflection-card { font-size: 1.05rem; padding: 2.5rem 1.5rem; }
+}
