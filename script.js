@@ -37,15 +37,19 @@ openButton.addEventListener("click", function () {
 
 function createBalloons() {
 
-    const balloonCount = 18;
+    const balloonCount = 14;
     const balloonColours = ["#F2B8C6", "#E88CA4", "#C23D6B", "#8A1F4B"];
+    const slotWidth = 100 / balloonCount;
 
     for (let i = 0; i < balloonCount; i++) {
 
         const balloon = document.createElement("div");
         balloon.classList.add("balloon");
 
-        balloon.style.left = Math.random() * 100 + "%";
+        // Even slot + small jitter inside it, so balloons stay spread apart
+        const jitter = Math.random() * (slotWidth * 0.4);
+        balloon.style.left = (i * slotWidth) + jitter + "%";
+
         balloon.style.background = balloonColours[Math.floor(Math.random() * balloonColours.length)];
         balloon.style.animationDuration = (12 + Math.random() * 6) + "s";
         balloon.style.animationDelay = (Math.random() * 2) + "s";
@@ -65,23 +69,38 @@ function createBalloons() {
 
 function createConfetti() {
 
-    const confettiCount = 100;
+    const burstCount = 4;
+    const burstDelay = 250; // ms between each burst
+
+    for (let b = 0; b < burstCount; b++) {
+        setTimeout(function () {
+            fireConfettiBurst();
+        }, b * burstDelay);
+    }
+
+}
+
+function fireConfettiBurst() {
+
+    const piecesPerBurst = 45;
     const confettiColours = ["#FDE9EF", "#F2B8C6", "#E88CA4", "#C23D6B", "#8A1F4B"];
 
-    for (let i = 0; i < confettiCount; i++) {
+    for (let i = 0; i < piecesPerBurst; i++) {
 
         const piece = document.createElement("div");
         piece.classList.add("confetti");
 
         piece.style.left = Math.random() * 100 + "%";
         piece.style.background = confettiColours[Math.floor(Math.random() * confettiColours.length)];
-        piece.style.animationDuration = (3 + Math.random() * 4) + "s";
-        piece.style.animationDelay = (Math.random() * 2) + "s";
+
+        // Fast fall, tightly clustered duration so the burst reads as quick
+        piece.style.animationDuration = (0.9 + Math.random() * 0.6) + "s";
+        piece.style.animationDelay = (Math.random() * 0.15) + "s";
         piece.style.transform = "rotate(" + Math.random() * 360 + "deg)";
 
         celebrationContainer.appendChild(piece);
 
-        setTimeout(function () { piece.remove(); }, 8000);
+        setTimeout(function () { piece.remove(); }, 2200);
 
     }
 
