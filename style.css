@@ -410,8 +410,8 @@ button { font-family: inherit; }
 
 .confetti {
     position: fixed;
-    width: 6px;
-    height: 6px;
+    width: 8px;
+    height: 12px;
     top: -30px;
     z-index: 30;
     pointer-events: none;

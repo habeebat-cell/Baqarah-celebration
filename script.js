@@ -69,8 +69,8 @@ function createBalloons() {
 
 function createConfetti() {
 
-    const burstCount = 4;
-    const burstDelay = 250; // ms between each burst
+    const burstCount = 5;
+    const burstDelay = 450; // ms between each burst, enough gap to read as separate pops
 
     for (let b = 0; b < burstCount; b++) {
         setTimeout(function () {
@@ -82,7 +82,7 @@ function createConfetti() {
 
 function fireConfettiBurst() {
 
-    const piecesPerBurst = 45;
+    const piecesPerBurst = 90;
     const confettiColours = ["#FDE9EF", "#F2B8C6", "#E88CA4", "#C23D6B", "#8A1F4B"];
 
     for (let i = 0; i < piecesPerBurst; i++) {
